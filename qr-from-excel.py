@@ -15,91 +15,82 @@ fuente = ImageFont.truetype(font_path, 50) if os.path.exists(font_path) else Ima
 
 st.title("Generador de QRs desde Excel v1.0")
 
-st.markdown(
-    """
-    <style>
-    /* Fondo general blanco */
-    .stApp {
-        background-color: #ffffff;
-        font-family: 'Segoe UI', sans-serif;
-        color: #212529;
-    }
+st.markdown("""
+<style>
+/* Fondo general blanco de toda la app */
+.stApp {
+    background-color: #ffffff;
+    font-family: 'Segoe UI', sans-serif;
+    color: #212529;
+}
 
-    /* Título */
-    h1 {
-        font-size: 2.5rem;
-        font-weight: 700;
-        color: #212529;
-    }
+/* Estilo del título principal */
+h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #212529;
+}
 
-    /* Área de subida (file uploader) */
-    .stFileUploader {
-        background-color: #f0f2f6;
-        padding: 1rem;
-        border-radius: 8px;
-        border: 1px solid #d3d3d3;
-    }
+/* Contenedor del uploader */
+[data-testid="stFileUploader"] {
+    background-color: #f0f2f6 !important;
+    border: 1px solid #d3d3d3 !important;
+    border-radius: 12px !important;
+    padding: 1rem;
+}
 
-    /* Recuadro interno del uploader */
-    .stFileUploader > div {
-        background-color: #f0f2f6 !important;
-        color: #212529 !important;
-        border: 1px dashed #ccc;
-        border-radius: 8px;
-    }
+/* Zona donde se arrastran los archivos (por defecto negra) */
+[data-testid="stFileDropzone"] {
+    background-color: #f0f2f6 !important;
+    border: 2px dashed #c0c0c0 !important;
+    color: #212529 !important;
+}
 
-    /* Texto del uploader */
-    .stFileUploader label {
-        color: #212529;
-        font-weight: 500;
-    }
+/* Botón "Browse files" */
+[data-testid="stFileUploader"] button {
+    background-color: #0d6efd;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 0.4rem 0.8rem;
+    font-weight: 500;
+}
 
-    /* Botón "Browse files" */
-    .stFileUploader button {
-        background-color: #0d6efd;
-        color: white;
-        border: none;
-        border-radius: 6px;
-        padding: 0.4rem 0.8rem;
-    }
+[data-testid="stFileUploader"] button:hover {
+    background-color: #0b5ed7;
+    color: white;
+}
 
-    .stFileUploader button:hover {
-        background-color: #0b5ed7;
-    }
+/* Éxito: cuadro de mensaje verde */
+.stAlert-success {
+    background-color: #d1e7dd !important;
+    color: #0f5132 !important;
+    border-color: #badbcc !important;
+    border-radius: 8px;
+}
 
-    /* Selectores e inputs */
-    .stSelectbox, .stTextInput, .stNumberInput, .stDateInput {
-        background-color: #f0f2f6 !important;
-        border-radius: 6px;
-    }
+/* DataFrame tabla */
+[data-testid="stDataFrame"] {
+    border: 1px solid #dee2e6;
+    border-radius: 10px;
+    overflow: hidden;
+}
 
-    /* Tablas */
-    .stDataFrame div[data-testid="stHorizontalBlock"] {
-        border: 1px solid #dee2e6;
-        border-radius: 8px;
-        overflow: hidden;
-        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-    }
+/* Botón general */
+.stButton > button {
+    background-color: #0d6efd;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+}
 
-    /* Alertas */
-    .stAlert-success {
-        background-color: #d1e7dd;
-        color: #0f5132;
-        border: 1px solid #badbcc;
-        border-radius: 5px;
-    }
-
-    /* Espaciado */
-    .block-container {
-        padding-top: 2rem;
-        padding-bottom: 2rem;
-        padding-left: 2rem;
-        padding-right: 2rem;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
+.stButton > button:hover {
+    background-color: #0b5ed7;
+}
+</style>
+""", unsafe_allow_html=True)
 
 uploaded_file = st.file_uploader("📥 Sube tu archivo Excel", type=["xlsx"])
 
