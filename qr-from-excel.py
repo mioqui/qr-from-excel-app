@@ -33,7 +33,7 @@ st.markdown(
         margin-bottom: 1.2rem;
     }
 
-    /* Botones */
+    /* Botones primarios */
     button[kind="primary"] {
         background-color: #0d6efd;
         color: white;
@@ -47,15 +47,16 @@ st.markdown(
         background-color: #0b5ed7;
     }
 
-    /* Inputs y select */
+    /* Entradas, selectores y subidas con fondo #f0f2f6 */
     .stSelectbox, .stFileUploader, .stTextInput, .stNumberInput, .stDateInput {
-        background-color: #f8f9fa;
+        background-color: #f0f2f6 !important;
         border: 1px solid #ced4da;
         border-radius: 6px;
         padding: 0.25rem 0.75rem;
+        color: #212529;
     }
 
-    /* Dataframe */
+    /* Tabla: Dataframe renderizado */
     .stDataFrame div[data-testid="stHorizontalBlock"] {
         border: 1px solid #dee2e6;
         border-radius: 8px;
@@ -63,7 +64,7 @@ st.markdown(
         box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
     }
 
-    /* Éxito y mensajes */
+    /* Mensajes de éxito */
     .stAlert-success {
         background-color: #d1e7dd;
         color: #0f5132;
@@ -71,7 +72,7 @@ st.markdown(
         border-radius: 5px;
     }
 
-    /* Padding global para estética */
+    /* Espaciado interior */
     .block-container {
         padding-top: 2rem;
         padding-bottom: 2rem;
