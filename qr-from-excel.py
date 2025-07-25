@@ -15,14 +15,64 @@ fuente = ImageFont.truetype(font_path, 50) if os.path.exists(font_path) else Ima
 
 st.title("Generador de QRs desde Excel v1.0")
 
-# Cambiar fondo a blanco y texto a negro
-st.markdown(
+# Cambiar fondo a blanco y texto a negrost.markdown(
     """
     <style>
-        .stApp {
-            background-color: white;
-            color: black;
-        }
+    /* Fondo general blanco */
+    .stApp {
+        background-color: #ffffff;
+        color: #1a1a1a;
+        font-family: 'Segoe UI', sans-serif;
+    }
+
+    /* Tablas */
+    .stDataFrame div[data-testid="stHorizontalBlock"] {
+        border: 1px solid #dee2e6;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Cajas de carga */
+    section[data-testid="stFileUploader"] {
+        background-color: #f8f9fa;
+        border: 1px dashed #ced4da;
+        padding: 1rem;
+        border-radius: 8px;
+    }
+
+    /* Mensajes de éxito */
+    .stAlert-success {
+        background-color: #d4edda;
+        border-color: #c3e6cb;
+        color: #155724;
+        border-radius: 5px;
+    }
+
+    /* Botón */
+    button[kind="primary"] {
+        background-color: #0069d9;
+        color: white;
+        border-radius: 6px;
+        border: none;
+    }
+
+    button[kind="primary"]:hover {
+        background-color: #0056b3;
+    }
+
+    /* Selectbox */
+    div[data-baseweb="select"] > div {
+        background-color: #f1f3f5;
+        border-radius: 6px;
+    }
+
+    /* Título */
+    h1 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: #212529;
+    }
     </style>
     """,
     unsafe_allow_html=True
