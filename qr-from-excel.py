@@ -18,7 +18,7 @@ st.title("Generador de QRs desde Excel v1.0")
 st.markdown(
     """
     <style>
-    /* Fondo blanco general */
+    /* Fondo general blanco */
     .stApp {
         background-color: #ffffff;
         font-family: 'Segoe UI', sans-serif;
@@ -30,33 +30,50 @@ st.markdown(
         font-size: 2.5rem;
         font-weight: 700;
         color: #212529;
-        margin-bottom: 1.2rem;
     }
 
-    /* Botones primarios */
-    button[kind="primary"] {
+    /* Área de subida (file uploader) */
+    .stFileUploader {
+        background-color: #f0f2f6;
+        padding: 1rem;
+        border-radius: 8px;
+        border: 1px solid #d3d3d3;
+    }
+
+    /* Recuadro interno del uploader */
+    .stFileUploader > div {
+        background-color: #f0f2f6 !important;
+        color: #212529 !important;
+        border: 1px dashed #ccc;
+        border-radius: 8px;
+    }
+
+    /* Texto del uploader */
+    .stFileUploader label {
+        color: #212529;
+        font-weight: 500;
+    }
+
+    /* Botón "Browse files" */
+    .stFileUploader button {
         background-color: #0d6efd;
         color: white;
         border: none;
         border-radius: 6px;
-        padding: 0.5rem 1rem;
-        font-size: 1rem;
+        padding: 0.4rem 0.8rem;
     }
 
-    button[kind="primary"]:hover {
+    .stFileUploader button:hover {
         background-color: #0b5ed7;
     }
 
-    /* Entradas, selectores y subidas con fondo #f0f2f6 */
-    .stSelectbox, .stFileUploader, .stTextInput, .stNumberInput, .stDateInput {
+    /* Selectores e inputs */
+    .stSelectbox, .stTextInput, .stNumberInput, .stDateInput {
         background-color: #f0f2f6 !important;
-        border: 1px solid #ced4da;
         border-radius: 6px;
-        padding: 0.25rem 0.75rem;
-        color: #212529;
     }
 
-    /* Tabla: Dataframe renderizado */
+    /* Tablas */
     .stDataFrame div[data-testid="stHorizontalBlock"] {
         border: 1px solid #dee2e6;
         border-radius: 8px;
@@ -64,7 +81,7 @@ st.markdown(
         box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
     }
 
-    /* Mensajes de éxito */
+    /* Alertas */
     .stAlert-success {
         background-color: #d1e7dd;
         color: #0f5132;
@@ -72,7 +89,7 @@ st.markdown(
         border-radius: 5px;
     }
 
-    /* Espaciado interior */
+    /* Espaciado */
     .block-container {
         padding-top: 2rem;
         padding-bottom: 2rem;
