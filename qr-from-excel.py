@@ -15,7 +15,7 @@ fuente = ImageFont.truetype(font_path, 50) if os.path.exists(font_path) else Ima
 
 st.title("Generador de QRs desde Excel v1.0")
 
-# Cambiar fondo a blanco y texto a negrost.markdown(
+st.markdown(
     """
     <style>
     /* Fondo general blanco */
