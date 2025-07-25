@@ -16,80 +16,37 @@ fuente = ImageFont.truetype(font_path, 50) if os.path.exists(font_path) else Ima
 st.title("Generador de QRs desde Excel v1.0")
 
 st.markdown("""
-<style>
-/* Fondo general blanco de toda la app */
-.stApp {
-    background-color: #ffffff;
-    font-family: 'Segoe UI', sans-serif;
-    color: #212529;
-}
+    <style>
+    /* Fondo blanco general */
+    .stApp {
+        background-color: white;
+    }
 
-/* Estilo del título principal */
-h1 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: #212529;
-}
+    /* Control de carga de archivo */
+    .stFileUploader {
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        padding: 10px;
+        background-color: #f0f2f6 !important;
+    }
 
-/* Contenedor del uploader */
-[data-testid="stFileUploader"] {
-    background-color: #f0f2f6 !important;
-    border: 1px solid #d3d3d3 !important;
-    border-radius: 12px !important;
-    padding: 1rem;
-}
+    /* Caja interna del uploader */
+    .stFileUploader > div:first-child {
+        background-color: #f0f2f6 !important;
+        border-radius: 10px;
+    }
+    </style>
 
-/* Zona donde se arrastran los archivos (por defecto negra) */
-[data-testid="stFileDropzone"] {
-    background-color: #f0f2f6 !important;
-    border: 2px dashed #c0c0c0 !important;
-    color: #212529 !important;
-}
-
-/* Botón "Browse files" */
-[data-testid="stFileUploader"] button {
-    background-color: #0d6efd;
-    color: white;
-    border: none;
-    border-radius: 6px;
-    padding: 0.4rem 0.8rem;
-    font-weight: 500;
-}
-
-[data-testid="stFileUploader"] button:hover {
-    background-color: #0b5ed7;
-    color: white;
-}
-
-/* Éxito: cuadro de mensaje verde */
-.stAlert-success {
-    background-color: #d1e7dd !important;
-    color: #0f5132 !important;
-    border-color: #badbcc !important;
-    border-radius: 8px;
-}
-
-/* DataFrame tabla */
-[data-testid="stDataFrame"] {
-    border: 1px solid #dee2e6;
-    border-radius: 10px;
-    overflow: hidden;
-}
-
-/* Botón general */
-.stButton > button {
-    background-color: #0d6efd;
-    color: white;
-    font-weight: bold;
-    border: none;
-    border-radius: 8px;
-    padding: 0.5rem 1rem;
-}
-
-.stButton > button:hover {
-    background-color: #0b5ed7;
-}
-</style>
+    <script>
+    // Espera a que el botón esté disponible y cambia su texto
+    const interval = setInterval(() => {
+        const btn = window.parent.document.querySelector('button[title="Browse files"]');
+        if (btn) {
+            btn.textContent = "Seleccionar archivo";
+            clearInterval(interval);
+        }
+    }, 500);
+    </script>
 """, unsafe_allow_html=True)
 
 uploaded_file = st.file_uploader("📥 Sube tu archivo Excel", type=["xlsx"])
