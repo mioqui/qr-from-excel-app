@@ -15,6 +15,19 @@ fuente = ImageFont.truetype(font_path, 50) if os.path.exists(font_path) else Ima
 
 st.title("Generador de QRs desde Excel v1.0")
 
+# Cambiar fondo a blanco y texto a negro
+st.markdown(
+    """
+    <style>
+        .stApp {
+            background-color: white;
+            color: black;
+        }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
 uploaded_file = st.file_uploader("📥 Sube tu archivo Excel", type=["xlsx"])
 
 if uploaded_file:
