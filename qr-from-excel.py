@@ -18,53 +18,11 @@ st.title("Generador de QRs desde Excel v1.0")
 st.markdown(
     """
     <style>
-    /* Fondo general blanco */
+    /* Fondo blanco general */
     .stApp {
         background-color: #ffffff;
-        color: #1a1a1a;
         font-family: 'Segoe UI', sans-serif;
-    }
-
-    /* Tablas */
-    .stDataFrame div[data-testid="stHorizontalBlock"] {
-        border: 1px solid #dee2e6;
-        border-radius: 8px;
-        overflow: hidden;
-        box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
-    }
-
-    /* Cajas de carga */
-    section[data-testid="stFileUploader"] {
-        background-color: #f8f9fa;
-        border: 1px dashed #ced4da;
-        padding: 1rem;
-        border-radius: 8px;
-    }
-
-    /* Mensajes de éxito */
-    .stAlert-success {
-        background-color: #d4edda;
-        border-color: #c3e6cb;
-        color: #155724;
-        border-radius: 5px;
-    }
-
-    /* Botón */
-    button[kind="primary"] {
-        background-color: #0069d9;
-        color: white;
-        border-radius: 6px;
-        border: none;
-    }
-
-    button[kind="primary"]:hover {
-        background-color: #0056b3;
-    }
-
-    /* Selectbox */
-    div[data-baseweb="select"] > div {
-        background-color: #f1f3f5;
-        border-radius: 6px;
+        color: #212529;
     }
 
     /* Título */
@@ -72,6 +30,53 @@ st.markdown(
         font-size: 2.5rem;
         font-weight: 700;
         color: #212529;
+        margin-bottom: 1.2rem;
+    }
+
+    /* Botones */
+    button[kind="primary"] {
+        background-color: #0d6efd;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+    }
+
+    button[kind="primary"]:hover {
+        background-color: #0b5ed7;
+    }
+
+    /* Inputs y select */
+    .stSelectbox, .stFileUploader, .stTextInput, .stNumberInput, .stDateInput {
+        background-color: #f8f9fa;
+        border: 1px solid #ced4da;
+        border-radius: 6px;
+        padding: 0.25rem 0.75rem;
+    }
+
+    /* Dataframe */
+    .stDataFrame div[data-testid="stHorizontalBlock"] {
+        border: 1px solid #dee2e6;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Éxito y mensajes */
+    .stAlert-success {
+        background-color: #d1e7dd;
+        color: #0f5132;
+        border: 1px solid #badbcc;
+        border-radius: 5px;
+    }
+
+    /* Padding global para estética */
+    .block-container {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+        padding-left: 2rem;
+        padding-right: 2rem;
     }
     </style>
     """,
