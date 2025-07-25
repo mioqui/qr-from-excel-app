@@ -15,54 +15,6 @@ fuente = ImageFont.truetype(font_path, 50) if os.path.exists(font_path) else Ima
 
 st.title("Generador de QRs desde Excel v1.0")
 
-st.markdown("""
-    <style>
-    .stApp {
-        background-color: white;
-    }
-
-    .stFileUploader {
-        border: 1px solid #ccc;
-        border-radius: 10px;
-        padding: 10px;
-        background-color: #f0f2f6 !important;
-    }
-
-    .stFileUploader > div:first-child {
-        background-color: #f0f2f6 !important;
-        border-radius: 10px;
-    }
-    </style>
-
-    <script>
-    const interval = setInterval(() => {
-        // Botón "Browse files"
-        const btn = window.parent.document.querySelector('button[title="Browse files"]');
-        if (btn) {
-            btn.textContent = "Seleccionar archivo";
-        }
-
-        // Texto "Drag and drop file here"
-        const dragText = Array.from(window.parent.document.querySelectorAll("span"))
-            .find(el => el.textContent.trim() === "Drag and drop file here");
-        if (dragText) {
-            dragText.textContent = "Arrastra y suelta el archivo aquí";
-        }
-
-        // Texto "Limit 200MB per file • XLSX"
-        const limitText = Array.from(window.parent.document.querySelectorAll("span"))
-            .find(el => el.textContent.includes("Limit") && el.textContent.includes("XLSX"));
-        if (limitText) {
-            limitText.textContent = "Límite 200MB por archivo • XLSX";
-        }
-
-        // Limpiar cuando se haya hecho todo
-        if (btn && dragText && limitText) {
-            clearInterval(interval);
-        }
-    }, 500);
-    </script>
-""", unsafe_allow_html=True)
 
 uploaded_file = st.file_uploader("📥 Sube tu archivo Excel", type=["xlsx"])
 
