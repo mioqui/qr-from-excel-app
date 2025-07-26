@@ -13,7 +13,7 @@ import json
 font_path = os.path.join("fonts", "arial.ttf")
 fuente = ImageFont.truetype(font_path, 50) if os.path.exists(font_path) else ImageFont.load_default()
 
-st.title("Generador de QRs desde Excel v1.0")
+st.title("Generador de QRs registro de Cargas v1.0")
 
 
 uploaded_file = st.file_uploader("📥 Sube tu archivo Excel", type=["xlsx"])
